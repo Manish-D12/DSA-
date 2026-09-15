@@ -6,11 +6,11 @@ class Solution {
     }
 
     private void backtrack(int start, int[] nums, List<Integer> cur, List<List<Integer>> res) {
-        res.add(new ArrayList<>(cur));   // every state is a valid subset
+        res.add(new ArrayList<>(cur));   
         for (int i = start; i < nums.length; i++) {
             cur.add(nums[i]);
-            backtrack(i + 1, nums, cur, res);   // move forward, no reuse
-            cur.remove(cur.size() - 1);         // undo
+            backtrack(i + 1, nums, cur, res);  
+            cur.remove(cur.size() - 1);       
         }
     }
 }
